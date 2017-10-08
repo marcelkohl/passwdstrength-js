@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="passwdstrength.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <input type="password" id="passwordStrengh1" autocomplete="off" class="pwd-strengh" value="1">
+        <hr>
+        <div class="score"></div><div class="complexity"></div>
+        <div><small>Take a look in the Javascript browser console to see the statistics about your password typing</small></div>
+        <script type="text/javascript">
+            $('.pwd-strengh').pwdStrengh('processPassword');
+
+            function processPassword(pStatus, pDetails) {
+                $('.score').html(pStatus.score+'%');
+                $('.complexity').html(pStatus.complexity);
+
+                console.log(pStatus, pDetails)
+            }
+        </script>
+    </body>
+</html>
